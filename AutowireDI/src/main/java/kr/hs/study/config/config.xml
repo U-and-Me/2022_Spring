@@ -18,11 +18,15 @@
       </bean>
       
       <bean id="data1" class="kr.hs.study.beans.DataBean1" />
- <bean id="data2" class="kr.hs.study.beans.DataBean1" />
+ 	  <bean id="data2" class="kr.hs.study.beans.DataBean1" />
       <bean id="t2" class="kr.hs.study.beans.TestBean1" autowire="byName"/> -->
       <!-- 이름에 맞춰서 자동으로 값을 넣어준다. -->
       
       <bean id="data1" class="kr.hs.study.beans.DataBean1" />
       <bean id="t3" class="kr.hs.study.beans.TestBean1" autowire="byType" />
+      
+      <bean id="data3" class="kr.hs.study.beans.DataBean3" />
+      <bean id="data4" class="kr.hs.study.beans.DataBean3" />
+      <bean id="t4" class="kr.hs.study.beans.TestBean3" autowire="constructor" />
       
 </beans>
