@@ -20,7 +20,7 @@ public class MainClass {
 		System.out.println("obj2 : " + obj2);
 		
 		ctx.close();
-
+		
 	}
 
 }
