@@ -1,5 +1,6 @@
 package kr.hs.study.beans;
 
+
 public class Designer implements Employee{
 
 	@Override
