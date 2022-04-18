@@ -10,20 +10,6 @@
 	                    http://www.springframework.org/schema/aop
 	                    http://www.springframework.org/schema/aop/spring-aop.xsd">
 	                    
-    <bean id="advisor" class="kr.hs.study.advisor.AdvisorClass" />  
-    <bean id="t1"  class="kr.hs.study.beans.TestBean1" />
-    
-    <aop:config>
-    	<aop:aspect ref="advisor">
-    		<aop:pointcut id="point" expression = "execution(* method1())" />
-    		
-    		<!-- method1이 실행되기 전에 beforeMethod가 먼저 실행됨 -->
-    		<aop:before method="beforeMethod" pointcut-ref="point" />	
-    		<aop:after method="afterMethod"  pointcut-ref="point" />
-    		<aop:around method="aroundMethod" pointcut-ref="point"/>
-    		<aop:after-returning method="afterReturningMethod" pointcut-ref="point"/>
-    		<aop:after-throwing method="afterThrowingMethod" pointcut-ref="point" throwing="e"/>    		
-    	</aop:aspect>
-    </aop:config>
+      
       
 </beans>

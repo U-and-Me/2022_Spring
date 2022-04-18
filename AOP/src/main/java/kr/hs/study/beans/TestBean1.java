@@ -5,6 +5,8 @@ package kr.hs.study.beans;
 public class TestBean1 {
 	public void method1() {
 		System.out.println("TestBean1의 method1");
+		// afterThrowingMethod를 실행시키기 위해 예외 발생시키기
+		int a = 100 / 0;
 	}
 	
 	public void method2() {
