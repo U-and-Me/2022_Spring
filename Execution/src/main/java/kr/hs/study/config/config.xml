@@ -10,6 +10,28 @@
 	                    http://www.springframework.org/schema/aop
 	                    http://www.springframework.org/schema/aop/spring-aop.xsd">
 	                    
-      
+    <bean id="advisor" class="kr.hs.study.advisor.AdvisorClass" />
+    <bean id="t1" class="kr.hs.study.beans.TestBean1" />
+    
+    <aop:config>
+    	<aop:aspect ref="advisor">
+    		<!-- 리턴 타입이 void이고, kr.hs.study.beans 패키지의 TestBean1의 클래스의 method1() 메소드가 관심 메소드이다. -->
+    		<!-- <aop:pointcut id="point" expression="execution(void kr.hs.study.beans.TestBean1.method1())"/> -->
+    		
+    		<!-- 리턴 타입이 void이고, kr.hs.study.beans 패키지의 TestBean1의 클래스의 int 매개변수를 가지고 있는 method1() 메소드가 관심 메소드이다. -->
+    		<!-- <aop:pointcut id="point" expression="execution(void kr.hs.study.beans.TestBean1.method1(int))"/> -->
+    		
+    		<!-- 리턴 타입이 void이고, kr.hs.study.beans 패키지의 TestBean1의 클래스의 String 매개변수를 가지고 있는 method1() 메소드가 관심 메소드이다. -->
+    		<!-- <aop:pointcut id="point" expression="execution(void kr.hs.study.beans.TestBean1.method1(java.lang.String))"/> -->
+    		
+    		<!-- 리턴 타입이 void이고, kr.hs.study.beans 패키지의 TestBean1의 클래스의 모든 타입의 매개변수 1개를 가지고 있는 method1() 메소드가 관심 메소드이다. -->
+    		<!-- <aop:pointcut id="point" expression="execution(void kr.hs.study.beans.TestBean1.method1(*))"/> -->
+    		
+    		<!-- 리턴 타입이 void이고, kr.hs.study.beans 패키지의 TestBean1의 클래스의 정수형 매개변수 2개를 가지고 있는 method1() 메소드가 관심 메소드이다. -->
+    		<aop:pointcut id="point" expression="execution(void kr.hs.study.beans.TestBean1.method1(int, int))"/>
+    		
+    		<aop:before method="beforeMethod" pointcut-ref="point" />
+    	</aop:aspect>
+    </aop:config>  
       
 </beans>
