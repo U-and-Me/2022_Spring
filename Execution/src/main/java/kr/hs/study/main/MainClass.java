@@ -18,6 +18,12 @@ public class MainClass {
 		obj1.method1(100);
 		obj1.method1("spring");
 		obj1.method1(100, 200);
+		obj1.method1(100, "spring");
+		obj1.method1(100, 123.45);
+		//obj1.method1();
+		obj1.method2(100);
+		obj1.method1();
+		obj1.method3();
 		
 		ctx.close();
 		
