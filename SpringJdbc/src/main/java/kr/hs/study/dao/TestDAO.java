@@ -1,5 +1,7 @@
 package kr.hs.study.dao;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Component;
@@ -13,6 +15,10 @@ public class TestDAO {
 	// jdbcTemplate 자동 주입
 	@Autowired
 	private JdbcTemplate db;
+	
+	@Autowired
+	MapperClass mapper;
+	// => 컨테이너에 있는 MapperClass bean을 찾아서 mapper에 자동으로 주입시켜라
 	
 	// 1. insert
 	public void insert_data(TestBean bean) {
@@ -33,4 +39,11 @@ public class TestDAO {
 		db.update(sql, data1);
 	}
 	
+	// 4. select
+	public List<TestBean> select_data() {
+		String sql = "select * from testJdbc";
+		List<TestBean> list = db.query(sql, mapper);
+		
+		return list;
+	}
 }
